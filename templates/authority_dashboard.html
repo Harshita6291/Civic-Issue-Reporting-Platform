@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authority Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background: #f8fafc; font-family: 'Inter', Arial, sans-serif; }
+        .sidebar { background: #2563eb; color: #fff; min-height: 100vh; padding-top: 2rem; }
+        .sidebar .nav-link { color: #fff; font-weight: 600; margin-bottom: 1rem; }
+        .sidebar .nav-link.active, .sidebar .nav-link:hover { background: #fff; color: #2563eb !important; border-radius: 0.5rem; }
+        .main-content { padding: 2rem; }
+        .card-title { font-weight: 700; color: #2563eb; }
+        .issue-card { border-radius: 1rem; box-shadow: 0 2px 12px #2563eb22; margin-bottom: 1rem; }
+        .kpi-card { border-radius: 1rem; box-shadow: 0 2px 12px #2563eb22; background: #fff; padding: 1.2rem; margin-bottom: 1rem; }
+        .kpi-title { font-weight: 600; color: #2563eb; }
+        .kpi-value { font-size: 2rem; font-weight: 700; }
+        .kpi-label { font-size: 1rem; font-weight: 500; }
+        .status-red { background: #ef4444; color: #fff; }
+        .status-yellow { background: #eab308; color: #fff; }
+        .status-green { background: #22c55e; color: #fff; }
+        .status-orange { background: #f59e42; color: #fff; }
+        .badge { font-size: 0.95rem; }
+        .priority-badge { font-size: 0.95rem; }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 sidebar">
+                <h3 class="mb-4"><i class="fa-solid fa-building-columns"></i> Authority Portal</h3>
+                <nav class="nav flex-column">
+                    <a class="nav-link active" href="/authority">Dashboard</a>
+                    <a class="nav-link" href="/authority/issues">Issues</a>
+                    <a class="nav-link" href="/authority/departments">Departments</a>
+                </nav>
+            </div>
+            <div class="col-md-9 main-content">
+                <h2 class="card-title mb-4">Dashboard</h2>
+                <!-- KPIs -->
+                <div class="row mb-4">
+                    <div class="col-md-3 col-6">
+                        <div class="kpi-card text-center">
+                            <div class="kpi-title">Total Issues</div>
+                            <div class="kpi-value">{{ total_issues }}</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="kpi-card text-center">
+                            <div class="kpi-title">Pending</div>
+                            <div class="kpi-value">{{ pending }}</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="kpi-card text-center">
+                            <div class="kpi-title">In Progress</div>
+                            <div class="kpi-value">{{ in_progress }}</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="kpi-card text-center">
+                            <div class="kpi-title">Resolved</div>
+                            <div class="kpi-value">{{ resolved }}</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Map and Recent Issues -->
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="card p-3 issue-card">
+                            <div class="card-title mb-2"><i class="fa-solid fa-map-location-dot"></i> Issue Location Map</div>
+                            <div id="issueMap" style="height: 320px; border-radius: 1rem; background:#e0e7ff;"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="card p-3 issue-card">
+                            <div class="card-title mb-2"><i class="fa-solid fa-list"></i> Recent Issues</div>
+                            <div class="list-group">
+                                {% if issues and issues|length > 0 %}
+                                    {% for issue in issues[::-1][:5] %}
+                                    <div class="list-group-item">
+                                        <div class="fw-bold">{{ issue.description[:50] }}{% if issue.description|length > 50 %}...{% endif %}</div>
+                                        <div class="small text-muted">Reporter: {{ issue.full_name }} | Location: {{ issue.location }} | Mobile: {{ issue.mobile }}</div>
+                                        <div class="small">Category: {{ issue.category }} | Urgency: {{ issue.urgency }}</div>
+                                    </div>
+                                    {% endfor %}
+                                {% else %}
+                                    <div class="list-group-item text-center text-muted">No issues submitted yet.</div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Issues by Department Pie Chart -->
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="card p-3 issue-card">
+                            <div class="card-title mb-2"><i class="fa-solid fa-chart-pie"></i> Issues by Department</div>
+                            <canvas id="deptPieChart" height="180"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="card p-3 issue-card">
+                            <div class="card-title mb-2"><i class="fa-solid fa-chart-bar"></i> Department Workload</div>
+                            <canvas id="deptBarChart" height="180"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Leaflet.js for map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        var map = L.map('issueMap').setView([28.6139, 77.2090], 12);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+        // Add markers for each issue if lat/lng available
+        // Chart.js Pie Chart
+        var deptCounts = {{ dept_counts|tojson }};
+        var pieLabels = Object.keys(deptCounts);
+        var pieData = Object.values(deptCounts);
+        var pieColors = [
+            '#3B82F6', '#ef4444', '#f59e42', '#eab308', '#a16207', '#22c55e', '#7c3aed'
+        ];
+        new Chart(document.getElementById('deptPieChart').getContext('2d'), {
+            type: 'pie',
+            data: {
+                labels: pieLabels,
+                datasets: [{
+                    data: pieData,
+                    backgroundColor: pieColors
+                }]
+            },
+            options: { plugins: { legend: { position: 'bottom' } } }
+        });
+        // Chart.js Bar Chart
+        new Chart(document.getElementById('deptBarChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: pieLabels,
+                datasets: [{
+                    label: 'Workload',
+                    data: pieData,
+                    backgroundColor: pieColors
+                }]
+            },
+            options: {
+                scales: { y: { min: 0 } },
+                plugins: { legend: { display: false } }
+            }
+        });
+    </script>
+</body>
+</html>

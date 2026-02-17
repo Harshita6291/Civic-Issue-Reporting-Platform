@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authority Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background: #f8fafc; font-family: 'Inter', Arial, sans-serif; }
+        .sidebar { background: #2563eb; color: #fff; min-height: 100vh; padding-top: 2rem; }
+        .sidebar .nav-link { color: #fff; font-weight: 600; margin-bottom: 1rem; }
+        .sidebar .nav-link.active, .sidebar .nav-link:hover { background: #fff; color: #2563eb !important; border-radius: 0.5rem; }
+        .main-content { padding: 2rem; }
+        .card-title { font-weight: 700; color: #2563eb; }
+        .issue-card { border-radius: 1rem; box-shadow: 0 2px 12px #2563eb22; margin-bottom: 1rem; }
+        .kpi-card { border-radius: 1rem; box-shadow: 0 2px 12px #2563eb22; background: #fff; padding: 1.2rem; margin-bottom: 1rem; }
+        .kpi-title { font-weight: 600; color: #2563eb; }
+        .kpi-value { font-size: 2rem; font-weight: 700; }
+        .badge-status-pending { background: #ef4444 !important; color: #fff !important; }
+        .badge-status-progress { background: #eab308 !important; color: #fff !important; }
+        .badge-status-resolved { background: #22c55e !important; color: #fff !important; }
+        .badge-urgency-high { background: #f59e42 !important; color: #fff !important; }
+        .badge-urgency-critical { background: #ef4444 !important; color: #fff !important; }
+        .badge-urgency-medium { background: #eab308 !important; color: #fff !important; }
+        .badge-urgency-low { background: #22c55e !important; color: #fff !important; }
+        .recent-issue-card { background: #fff; border-radius: 1rem; box-shadow: 0 2px 12px #2563eb22; margin-bottom: 1.2rem; padding: 1.2rem 1.5rem; }
+        .recent-issue-title { font-size: 1.15rem; font-weight: 700; color: #1e293b; margin-bottom: 0.2rem; }
+        .recent-issue-meta { font-size: 0.95rem; color: #64748b; margin-bottom: 0.3rem; }
+        .recent-issue-badges { margin-bottom: 0.5rem; }
+        .badge { font-size: 0.95rem; border-radius: 0.5rem; margin-right: 0.3rem; }
+        .badge-urgency { font-weight: 600; }
+        .view-link { color: #2563eb; font-weight: 600; text-decoration: none; }
+        .view-link:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 sidebar">
+                <h3 class="mb-4"><i class="fa-solid fa-building-columns"></i> Authority Portal</h3>
+                <nav class="nav flex-column">
+                    <a class="nav-link active" href="/authority">Dashboard</a>
+                    <a class="nav-link" href="/authority/issues">Issues</a>
+                    <a class="nav-link" href="/authority/departments">Departments</a>
+                </nav>
+            </div>
+            <div class="col-md-9 main-content">
+                <h2 class="card-title mb-4">Dashboard</h2>
+                <!-- KPIs -->
+                <div class="row mb-4">
+                    <div class="col-md-3 col-6">
+                        <div class="kpi-card text-center" style="border:2.5px solid #3B82F6;">
+                            <div class="kpi-title" style="color:#3B82F6;">Total Issues</div>
+                            <div class="kpi-value" style="color:#3B82F6;">{{ total_issues }}</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="kpi-card text-center" style="border:2.5px solid #ef4444;">
+                            <div class="kpi-title" style="color:#ef4444;">Pending</div>
+                            <div class="kpi-value" style="color:#ef4444;">{{ pending }}</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="kpi-card text-center" style="border:2.5px solid #eab308;">
+                            <div class="kpi-title" style="color:#eab308;">In Progress</div>
+                            <div class="kpi-value" style="color:#eab308;">{{ in_progress }}</div>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6">
+                        <div class="kpi-card text-center" style="border:2.5px solid #22c55e;">
+                            <div class="kpi-title" style="color:#22c55e;">Resolved</div>
+                            <div class="kpi-value" style="color:#22c55e;">{{ resolved }}</div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Charts Row -->
+                <div class="row">
+                    <div class="col-lg-6 mb-4">
+                        <div class="card p-3 issue-card">
+                            <div class="card-title mb-2"><i class="fa-solid fa-chart-pie"></i> Issues by Department</div>
+                            <canvas id="deptPieChart" height="180"></canvas>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 mb-4">
+                        <div class="card p-3 issue-card">
+                            <div class="card-title mb-2"><i class="fa-solid fa-chart-bar"></i> Department Workload</div>
+                            <canvas id="deptBarChart" height="180"></canvas>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent Issues Below Charts -->
+                <div class="row">
+                    <div class="col-12 mb-4">
+                        <div class="card p-3 issue-card">
+                            <div class="card-title mb-2"><i class="fa-regular fa-clock"></i> Recent Issues</div>
+                            {% if issues and issues|length > 0 %}
+                                {% for issue in issues[::-1][:5] %}
+                                <div class="recent-issue-card
+                                    {% if issue.status %}
+                                        {% if issue.status.lower() == 'pending' %} status-pending
+                                        {% elif issue.status.lower() == 'in progress' %} status-progress
+                                        {% elif issue.status.lower() == 'resolved' %} status-resolved
+                                        {% endif %}
+                                    {% endif %}">
+                                    <div class="d-flex justify-content-between align-items-center mb-1">
+                                        <div class="recent-issue-title">{{ issue.title if issue.title else issue.description[:50] }}{% if issue.description|length > 50 %}...{% endif %}</div>
+                                        <!-- Always show urgency badge for demo -->
+                                        <span class="badge badge-urgency badge-urgency-high">High</span>
+                                    </div>
+                                    <div class="recent-issue-meta">
+                                        <i class="fa-regular fa-user"></i> {{ issue.full_name }}
+                                        &nbsp; <i class="fa-solid fa-location-dot"></i> {{ issue.location }}
+                                        &nbsp; <i class="fa-regular fa-calendar"></i> {{ issue.date if issue.date else 'N/A' }}
+                                    </div>
+                                    <div class="recent-issue-badges">
+                                        <!-- Always show status badge for demo -->
+                                        <span class="badge badge-status-pending">Pending</span>
+                                        <span class="badge bg-secondary">{{ issue.category }}</span>
+                                    </div>
+                                    <div class="mt-1">
+                                        <a href="#" class="view-link"><i class="fa-regular fa-eye"></i> View</a>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                            {% else %}
+                                <div class="text-center text-muted">No issues submitted yet.</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Leaflet.js for map -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // The following line is a Jinja2 template expression and will only work when rendered by Flask
+        // VS Code may show errors, but it works in the browser
+        var deptCounts = {{ dept_counts|tojson }};
+        var pieLabels = Object.keys(deptCounts);
+        var pieData = Object.values(deptCounts);
+        var pieColors = [
+            '#3B82F6', '#ef4444', '#f59e42', '#eab308', '#a16207', '#22c55e', '#7c3aed'
+        ];
+        new Chart(document.getElementById('deptPieChart').getContext('2d'), {
+            type: 'pie',
+            data: {
+                labels: pieLabels,
+                datasets: [{
+                    data: pieData,
+                    backgroundColor: pieColors
+                }]
+            },
+            options: { plugins: { legend: { position: 'bottom' } } }
+        });
+        new Chart(document.getElementById('deptBarChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: pieLabels,
+                datasets: [{
+                    label: 'Workload',
+                    data: pieData,
+                    backgroundColor: pieColors
+                }]
+            },
+            options: {
+                scales: { y: { min: 0 } },
+                plugins: { legend: { display: false } }
+            }
+        });
+    </script>
+</body>
+</html>

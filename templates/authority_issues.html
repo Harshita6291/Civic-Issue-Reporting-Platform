@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authority Issues</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    <style>
+        body { background: #f8fafc; font-family: 'Inter', Arial, sans-serif; }
+        .sidebar { background: #2563eb; color: #fff; min-height: 100vh; padding-top: 2rem; }
+        .sidebar .nav-link { color: #fff; font-weight: 600; margin-bottom: 1rem; }
+        .sidebar .nav-link.active, .sidebar .nav-link:hover { background: #fff; color: #2563eb !important; border-radius: 0.5rem; }
+        .main-content { padding: 2rem; }
+        .card-title { font-weight: 700; color: #2563eb; }
+        .table thead th { background: #f1f5f9; color: #2563eb; font-weight: 700; }
+        .badge-status-pending { background: #fee2e2; color: #ef4444; font-weight: 600; }
+        .badge-status-progress { background: #fef9c3; color: #eab308; font-weight: 600; }
+        .badge-status-resolved { background: #dcfce7; color: #22c55e; font-weight: 600; }
+        .badge-urgency-high { background: #fef3c7; color: #f59e42; font-weight: 600; }
+        .badge-urgency-critical { background: #fee2e2; color: #ef4444; font-weight: 600; }
+        .badge-urgency-medium { background: #fef9c3; color: #eab308; font-weight: 600; }
+        .badge-urgency-low { background: #dcfce7; color: #22c55e; font-weight: 600; }
+        .badge { font-size: 0.95rem; border-radius: 0.5rem; margin-right: 0.3rem; padding: 0.45em 1em; }
+        .action-link { color: #2563eb; font-weight: 600; text-decoration: none; }
+        .action-link:hover { text-decoration: underline; }
+        .fa-eye { margin-right: 0.2em; }
+        .badge-status-pending-outline { border:2px solid #ef4444; color:#ef4444; background:transparent; font-weight:600; }
+        .badge-status-progress-outline { border:2px solid #eab308; color:#eab308; background:transparent; font-weight:600; }
+        .badge-status-resolved-outline { border:2px solid #22c55e; color:#22c55e; background:transparent; font-weight:600; }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 sidebar">
+                <h3 class="mb-4"><i class="fa-solid fa-building-columns"></i> Authority Portal</h3>
+                <nav class="nav flex-column">
+                    <a class="nav-link" href="/authority">Dashboard</a>
+                    <a class="nav-link active" href="/authority/issues">Issues</a>
+                    <a class="nav-link" href="/authority/departments">Departments</a>
+                </nav>
+            </div>
+            <div class="col-md-9 main-content">
+                <h2 class="card-title mb-4">Issues <span class="text-secondary">({{ issues|length }})</span></h2>
+                <div class="card p-3 issue-card">
+                    <div class="table-responsive">
+                        <table class="table align-middle">
+                            <thead>
+                                <tr>
+                                    <th>Description</th>
+                                    <th>Urgency</th>
+                                    <th>Status</th>
+                                    <th>Date</th>
+                                    <th>Ticket ID</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% if issues and issues|length > 0 %}
+                                    {% for issue in issues[::-1] %}
+                                    <tr>
+                                        <td>{{ issue.description }}</td>
+                                        <td>
+                                            {% if issue.urgency %}
+                                                <span class="badge 
+                                                    {% if issue.urgency.lower() == 'high' %}badge-urgency-high
+                                                    {% elif issue.urgency.lower() == 'critical' %}badge-urgency-critical
+                                                    {% elif issue.urgency.lower() == 'medium' %}badge-urgency-medium
+                                                    {% elif issue.urgency.lower() == 'low' %}badge-urgency-low
+                                                    {% endif %}">
+                                                    {{ issue.urgency }}
+                                                </span>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            {% if issue.status %}
+                                                <span class="badge 
+                                                    {% if issue.status.lower() == 'pending' %}badge-status-pending-outline
+                                                    {% elif issue.status.lower() == 'in progress' %}badge-status-progress-outline
+                                                    {% elif issue.status.lower() == 'resolved' %}badge-status-resolved-outline
+                                                    {% else %}bg-secondary border border-secondary text-secondary{% endif %}">
+                                                    {{ issue.status.title() }}
+                                                </span>
+                                            {% elif issue.description %}
+                                                <span class="badge badge-status-pending-outline">Pending</span>
+                                            {% else %}
+                                                <span class="badge bg-secondary">N/A</span>
+                                            {% endif %}
+                                        </td>
+                                        <td>
+                                            {% if issue.date %}
+                                                {% set d = issue.date.split('-') %}
+                                                {% if d|length == 3 %}{{ d[2] }}-{{ d[1] }}-{{ d[0] }}{% else %}{{ issue.date }}{% endif %}
+                                            {% else %}
+                                                N/A
+                                            {% endif %}
+                                        </td>
+                                        <td>{{ issue.ticket_id if issue.ticket_id else 'N/A' }}</td>
+                                        <td><a href="#" class="action-link"><i class="fa-regular fa-eye"></i> View</a></td>
+                                    </tr>
+                                    {% endfor %}
+                                {% else %}
+                                    <tr><td colspan="6" class="text-center text-muted">No issues submitted yet.</td></tr>
+                                {% endif %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

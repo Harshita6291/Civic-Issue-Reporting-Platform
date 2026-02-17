@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issue Submitted - Confirmation</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%);
+            font-family: 'Inter', Arial, sans-serif;
+        }
+        .confirm-card {
+            border: none;
+            border-radius: 1.2rem;
+            max-width: 500px;
+            margin: auto;
+            margin-top: 3rem;
+            padding: 2.5rem 2rem 2rem 2rem;
+            background: #fff;
+            box-shadow: 0 8px 32px #2563eb22;
+        }
+        .confirm-title {
+            color: #2563eb;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+        }
+        .ticket-id { color: #2563eb; font-weight: 700; font-size: 1.3rem; }
+        .status-indicator { font-size: 1.2rem; font-weight: 600; margin-bottom: 0.5rem; }
+        .status-red { color: #ef4444; }
+        .status-yellow { color: #eab308; }
+        .status-green { color: #22c55e; }
+        .ai-suggestion {
+            background: #f1f5fb;
+            border-radius: 0.7rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            border-left: 4px solid #2563eb;
+        }
+        .btn-primary {
+            background: #2563eb;
+            border: none;
+            font-weight: 600;
+        }
+        .btn-primary:hover {
+            background: #1e40af;
+        }
+        @media (max-width: 600px) {
+            .confirm-card { padding: 1.2rem; }
+            .confirm-title { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="confirm-card shadow">
+        <div class="confirm-title mb-3 text-center">Issue Submitted Successfully!</div>
+        <div class="mb-3 text-center ticket-id">Ticket ID: #{{ ticket_id }}</div>
+        <div class="mb-3 text-center">
+            <!-- Language selection buttons removed -->
+        </div>
+        <div class="mb-3">
+            <b>Estimated Resolution Timeline:</b> 3-5 business days
+        </div>
+        <div class="mb-3 status-indicator status-red">
+            🔴 Submitted/Pending Review
+        </div>
+        <div class="mb-3 status-indicator status-yellow">
+            🟡 Assigned to Worker/In Progress
+        </div>
+        <div class="mb-3 status-indicator status-green">
+            🟢 Resolved <span style="font-size:1.5rem;">✅</span>
+        </div>
+        <div class="ai-suggestion mb-3">
+            <b>AI Suggestions:</b><br>
+            <ul class="mb-0">
+                {% if ai_suggestions %}
+                    {% for suggestion in ai_suggestions %}
+                        <li>{{ suggestion }}</li>
+                    {% endfor %}
+                {% else %}
+                    <li>No AI suggestions available.</li>
+                {% endif %}
+            </ul>
+        </div>
+        <div class="text-center mb-3">
+            <button class="btn btn-success me-2" onclick="resolveByAI()">Issue Resolved by AI</button>
+            <button class="btn btn-warning" onclick="sendToAuthority()">Send Complaint to Authorities</button>
+        </div>
+        <script>
+        function resolveByAI() {
+            fetch('/resolve_by_ai', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ ticket_id: '{{ ticket_id }}' })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Issue marked as resolved by AI. Thank you!');
+                    window.location.reload();
+                } else {
+                    alert('Failed to update issue status.');
+                }
+            });
+        }
+        function sendToAuthority() {
+            fetch('/send_to_authority', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ ticket_id: '{{ ticket_id }}' })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Complaint has been sent to the concerned authority.\nTicket No: #{{ ticket_id }}');
+                } else {
+                    alert('Failed to send complaint.');
+                }
+            });
+        }
+        </script>
+        <div class="text-center">
+            <a href="/" class="btn btn-primary">Go to Home</a>
+        </div>
+        <script>
+        function openAISuggestions(lang) {
+            window.open(`/ai_suggestions?ticket_id={{ ticket_id }}&lang=${lang}`, '_blank');
+        }
+        </script>
+    </div>
+</body>
+</html>

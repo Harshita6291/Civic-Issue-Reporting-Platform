@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Citizen Portal - Registration & Issue Reporting</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%);
+            font-family: 'Inter', Arial, sans-serif;
+        }
+        .register-card {
+            border: none;
+            border-radius: 1.2rem;
+            max-width: 650px;
+            margin: auto;
+            margin-top: 2rem;
+            padding: 2.5rem 2rem 2rem 2rem;
+            background: #fff;
+            box-shadow: 0 8px 32px #2563eb22;
+        }
+        .register-title {
+            color: #2563eb;
+            font-family: 'Montserrat', Arial, sans-serif;
+            font-weight: 700;
+            font-size: 2rem;
+        }
+        .section-title {
+            color: #2563eb;
+            font-weight: 600;
+            margin-top: 1.5rem;
+            font-size: 1.2rem;
+        }
+        .form-label { font-weight: 500; }
+        .category-select, .urgency-radio { margin-bottom: 1rem; }
+        .photo-upload {
+            border: 2px dashed #2563eb;
+            border-radius: 0.7rem;
+            padding: 1rem;
+            background: #f1f5fb;
+            transition: border-color 0.2s;
+        }
+        .photo-upload:hover {
+            border-color: #1e40af;
+        }
+        .btn-gps {
+            color: #2563eb;
+            border-color: #2563eb;
+            font-weight: 600;
+        }
+        .btn-gps:hover {
+            background: #2563eb;
+            color: #fff;
+        }
+        .btn-primary {
+            background: #2563eb;
+            border: none;
+            font-weight: 600;
+        }
+        .btn-primary:hover {
+            background: #1e40af;
+        }
+        @media (max-width: 700px) {
+            .register-card { padding: 1.2rem; }
+            .register-title { font-size: 1.3rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="register-card shadow">
+        <div class="register-title mb-3 text-center">Citizen Registration & Issue Reporting</div>
+        <form method="POST" action="/citizen/register" enctype="multipart/form-data">
+            <div class="section-title">Personal Information</div>
+            <div class="mb-3">
+                <label class="form-label">Full Name *</label>
+                <input type="text" class="form-control" name="full_name" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Aadhaar Number *</label>
+                <input type="text" class="form-control" name="aadhaar" maxlength="14" pattern="\d{4} \d{4} \d{4}" placeholder="XXXX XXXX XXXX" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Mobile Number *</label>
+                <input type="tel" class="form-control" name="mobile" pattern="[0-9]{10}" required>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Address</label>
+                <input type="text" class="form-control" name="address">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">PIN Code</label>
+                <input type="text" class="form-control" name="pincode" pattern="[0-9]{6}">
+            </div>
+            <div class="section-title">Issue Reporting</div>
+            <div class="mb-3">
+                <label class="form-label">Problem Description</label>
+                <textarea class="form-control" name="description" maxlength="500" rows="3" required></textarea>
+            </div>
+            <div class="mb-3 category-select">
+                <label class="form-label">Issue Category</label>
+                <select class="form-select" name="category" required>
+                    <option value="">Select Category</option>
+                    <option>Garbage/Waste Management</option>
+                    <option>Street Lights</option>
+                    <option>Water Leakage</option>
+                    <option>Road Potholes</option>
+                    <option>Drainage/Sewage</option>
+                    <option>Public Transport</option>
+                    <option>Noise Pollution</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <div class="input-group">
+                    <input type="text" class="form-control" id="location" name="location" placeholder="Enter location or use GPS">
+                    <button type="button" class="btn btn-primary" onclick="detectGPS()">Detect GPS</button>
+                </div>
+            </div>
+            <div class="mb-3 photo-upload">
+                <label class="form-label">Photo Upload</label>
+                <input type="file" class="form-control" name="photos" multiple accept="image/*">
+                <small>Drag & drop or select multiple images. Images will be saved with your Ticket ID.</small>
+            </div>
+            <div class="mb-3 urgency-radio">
+                <label class="form-label">Urgency Level</label><br>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="urgency" value="Low" required>
+                    <label class="form-check-label">Low</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="urgency" value="Medium">
+                    <label class="form-check-label">Medium</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="urgency" value="High">
+                    <label class="form-check-label">High</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="radio" name="urgency" value="Critical">
+                    <label class="form-check-label">Critical</label>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Submit Issue</button>
+        </form>
+    </div>
+    <script>
+        function detectGPS() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var lat = position.coords.latitude;
+                    var lng = position.coords.longitude;
+                    // Use OpenStreetMap Nominatim API to get address
+                    fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lng}`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data && data.display_name) {
+                                document.getElementById('location').value = data.display_name;
+                            } else {
+                                document.getElementById('location').value = lat + ", " + lng;
+                            }
+                        })
+                        .catch(() => {
+                            document.getElementById('location').value = lat + ", " + lng;
+                        });
+                }, function(error) {
+                    alert('Unable to retrieve your location.');
+                });
+            } else {
+                alert('Geolocation is not supported by your browser.');
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

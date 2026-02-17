@@ -1,0 +1,545 @@
+[
+  {
+    "full_name": "Harshita Upadhyay",
+    "aadhaar": "4525 9258 6538",
+    "mobile": "8937988072",
+    "address": "Koyla Alipur Post Baad, Mathura, UP",
+    "pincode": "281006",
+    "description": "I have a problem of garbage in my area. A large pile has been lying here for weeks without being cleaned. It\u2019s creating a bad smell, attracting stray animals, and causing health concerns for people living nearby. I am reporting this issue so that it can be resolved quickly and the area can be kept clean.",
+    "category": "Garbage/Waste Management",
+    "location": "Koyla Alipur Post Baad, Mathura, UP, 281006",
+    "urgency": "High"
+  },
+  {
+    "full_name": "Harshita Sharma",
+    "aadhaar": "8764 4466 8777",
+    "mobile": "7078242921",
+    "address": "bjj, bhjghg, bjgjg , UP",
+    "pincode": "281006",
+    "description": "bbbbbbbbbbbb jjjjjjjjjjjjj hhhhhhhhhh",
+    "category": "Road Potholes",
+    "location": "kabadi",
+    "urgency": "Medium",
+    "date": "18-09-2025"
+  },
+  {
+    "full_name": "Shivi Singh",
+    "aadhaar": "8978 2563 5467",
+    "mobile": "1234567891",
+    "address": "jdsgfjgsjgs",
+    "pincode": "281006",
+    "description": "dhsbgfkhfkgvk",
+    "category": "Noise Pollution",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "Critical",
+    "date": "18-09-2025"
+  },
+  {
+    "ticket_id": "32576b4f-720c-4453-afd7-85f00b344e1c",
+    "full_name": "Sanjay Kumar Upadhyay",
+    "aadhaar": "2345 6789 1234",
+    "mobile": "9548236699",
+    "address": "jsbgugyugugugu",
+    "pincode": "281006",
+    "description": "vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv",
+    "category": "Drainage/Sewage",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "High",
+    "date": "18-09-2025"
+  },
+  {
+    "ticket_id": "5c1dcfb9-82c7-4f3e-9558-80d63676fbbe",
+    "full_name": "Riya Singh",
+    "aadhaar": "8888 2222 4444",
+    "mobile": "1234567898",
+    "address": "jewebjhdhkhkjkkbk",
+    "pincode": "281006",
+    "description": "anhWJSBBdsjdkjdfsksdfk",
+    "category": "Drainage/Sewage",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "Critical",
+    "date": "18-09-2025"
+  },
+  {
+    "ticket_id": "2b8742d7-e681-47fb-b79e-084940a07d8f",
+    "full_name": "edafsfadfadf",
+    "aadhaar": "4567 8888 9999",
+    "mobile": "5666635552",
+    "address": "Koyla Alipur Post Baad",
+    "pincode": "281006",
+    "description": "hvvhvgjg",
+    "category": "Street Lights",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "Low",
+    "date": "18-09-2025"
+  },
+  {
+    "ticket_id": "84bbe9ac-8870-406e-8632-278ae56099ae",
+    "full_name": "dghsfddd",
+    "aadhaar": "1234 1234 1234",
+    "mobile": "1234567891",
+    "address": "dsguuygsugugug",
+    "pincode": "281006",
+    "description": "sdfFsfz",
+    "category": "Public Transport",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "Low",
+    "date": "18-09-2025"
+  },
+  {
+    "ticket_id": "534b997d-813b-476a-aca0-fc72d86a15d6",
+    "full_name": "Pinky Sharma",
+    "aadhaar": "8797 8798 8654",
+    "mobile": "6646847647",
+    "address": "rjbhjbfhhkhiugh",
+    "pincode": "281006",
+    "description": "khjuhgjugjgjgjhmgm",
+    "category": "Street Lights",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "Low",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\534b997d-813b-476a-aca0-fc72d86a15d6_0.png"
+    ]
+  },
+  {
+    "ticket_id": "62a3e76a-5012-4901-a6c0-dac2377954df",
+    "full_name": "Riya Singh",
+    "aadhaar": "7456 1234 5555",
+    "mobile": "8937988072",
+    "address": "hjgsyej",
+    "pincode": "281006",
+    "description": "I have a problem of garbage in my area. A large pile has been lying here for weeks without being cleaned. It\u2019s creating a bad smell, attracting stray animals, and causing health concerns for people living nearby. I am reporting this issue so that it can be resolved quickly and the area can be kept clean.",
+    "category": "Garbage/Waste Management",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "High",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\62a3e76a-5012-4901-a6c0-dac2377954df_0.jpg"
+    ]
+  },
+  {
+    "ticket_id": "719ac45b-6522-427f-b290-7eb885529845",
+    "full_name": "Palak Mishra",
+    "aadhaar": "1235 5678 5463",
+    "mobile": "8937988072",
+    "address": "kkkkkkkk",
+    "pincode": "281006",
+    "description": "I have a problem of garbage in my area. A large pile has been lying here for weeks without being cleaned. It\u2019s creating a bad smell, attracting stray animals, and causing health concerns for people living nearby. I am reporting this issue so that it can be resolved quickly and the area can be kept clean.",
+    "category": "Garbage/Waste Management",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "High",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\719ac45b-6522-427f-b290-7eb885529845_0.jpg"
+    ]
+  },
+  {
+    "ticket_id": "cf653cbd-2dd4-4d55-a484-88fd6c17e95f",
+    "full_name": "Himani ",
+    "aadhaar": "1111 2222 3333",
+    "mobile": "7078242921",
+    "address": "bbbbbbbbbbbbbbbbbbbbbbb",
+    "pincode": "304022",
+    "description": "I have a problem of garbage in my area. A large pile has been lying here for weeks without being cleaned. It\u2019s creating a bad smell, attracting stray animals, and causing health concerns for people living nearby. I am reporting this issue so that it can be resolved quickly and the area can be kept clean.",
+    "category": "Garbage/Waste Management",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "Critical",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\cf653cbd-2dd4-4d55-a484-88fd6c17e95f_0.jpg"
+    ]
+  },
+  {
+    "ticket_id": "ddae2efd-cd27-4d01-ab8d-a99c1f6af16c",
+    "full_name": "Riya Sharma",
+    "aadhaar": "4525 9258 6538",
+    "mobile": "8937988072",
+    "address": "Koyla Alipur Post Baad, Mathura",
+    "pincode": "281006",
+    "description": "I have a problem of water leakage in my area. A pipe has been leaking for many days, and a lot of water is being wasted. The continuous flow of water is also making the road slippery and unsafe for people. I am reporting this issue so that it can be fixed quickly and water can be saved.",
+    "category": "Water Leakage",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "High",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\ddae2efd-cd27-4d01-ab8d-a99c1f6af16c_0.jpg"
+    ]
+  },
+  {
+    "ticket_id": "b2be4036-556a-416e-acb7-00a832c91f61",
+    "full_name": "Harshita Sharma",
+    "aadhaar": "8989 7878 6767",
+    "mobile": "9997841443",
+    "address": "Roorkee, ghar hai",
+    "pincode": "304022",
+    "description": "I have a problem of water leakage in my area. A pipe has been leaking for many days, and a lot of water is being wasted. The continuous flow of water is also making the road slippery and unsafe for people. I am reporting this issue so that it can be fixed quickly and water can be saved",
+    "category": "Water Leakage",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "High",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\b2be4036-556a-416e-acb7-00a832c91f61_0.jpg"
+    ]
+  },
+  {
+    "ticket_id": "b0306ced-5153-47e8-98b7-6e09aded989b",
+    "full_name": "Pinki Trivedi",
+    "aadhaar": "4565 4565 4565",
+    "mobile": "8937988072",
+    "address": "Koyla Alipur Post Baad",
+    "pincode": "281006",
+    "description": "I have a problem of water leakage in my area. A pipe has been leaking for many days, and a lot of water is being wasted. The continuous flow of water is also making the road slippery and unsafe for people. I am reporting this issue so that it can be fixed quickly and water can be saved",
+    "category": "Water Leakage",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "High",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\b0306ced-5153-47e8-98b7-6e09aded989b_0.jpg"
+    ]
+  },
+  {
+    "ticket_id": "68355db7-cfd0-411c-a1a4-16ac2897b13e",
+    "full_name": "Riya Singh",
+    "aadhaar": "1234 2345 3456",
+    "mobile": "8937988072",
+    "address": "Koyla Alipur Post Baad",
+    "pincode": "281006",
+    "description": "I have a problem of water leakage in my area. A pipe has been leaking for many days, and a lot of water is being wasted. The continuous flow of water is also making the road slippery and unsafe for people. I am reporting this issue so that it can be fixed quickly and water can be saved",
+    "category": "Water Leakage",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "High",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\68355db7-cfd0-411c-a1a4-16ac2897b13e_0.jpg"
+    ]
+  },
+  {
+    "ticket_id": "13b10085-cc53-4009-8c7d-3204e55a5e65",
+    "full_name": "Harshita Upadhyay",
+    "aadhaar": "4525 9258 6538",
+    "mobile": "8937988072",
+    "address": "Koyla Alipur Post Baad",
+    "pincode": "281006",
+    "description": "I have a problem of water leakage in my area. A pipe has been leaking for many days, and a lot of water is being wasted. The continuous flow of water is also making the road slippery and unsafe for people. I am reporting this issue so that it can be fixed quickly and water can be saved",
+    "category": "Water Leakage",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "High",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\13b10085-cc53-4009-8c7d-3204e55a5e65_0.jpg"
+    ]
+  },
+  {
+    "ticket_id": "3094b610-7d75-47d5-93b6-2438d7d5994c",
+    "full_name": "Sanjay Kumar Upadhyay",
+    "aadhaar": "1234 5678 6546",
+    "mobile": "8937988072",
+    "address": "Koyla Alipur Post Baad",
+    "pincode": "281006",
+    "description": "I have a problem of water leakage in my area. A pipe has been leaking for many days, and a lot of water is being wasted. The continuous flow of water is also making the road slippery and unsafe for people. I am reporting this issue so that it can be fixed quickly and water can be saved",
+    "category": "Water Leakage",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "Medium",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\3094b610-7d75-47d5-93b6-2438d7d5994c_0.jpg"
+    ]
+  },
+  {
+    "ticket_id": "64e08047-5fe4-47d1-b6de-d3ec44d0d7a2",
+    "full_name": "Harshita Upadhyay",
+    "aadhaar": "1234 1234 1234",
+    "mobile": "8937988072",
+    "address": "Koyla Alipur Post Baad",
+    "pincode": "281006",
+    "description": "I have a problem of water leakage in my area. A pipe has been leaking for many days, and a lot of water is being wasted. The continuous flow of water is also making the road slippery and unsafe for people. I am reporting this issue so that it can be fixed quickly and water can be saved",
+    "category": "Water Leakage",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "High",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\64e08047-5fe4-47d1-b6de-d3ec44d0d7a2_0.jpg"
+    ]
+  },
+  {
+    "ticket_id": "291cd0ee-4f6b-4e67-bcc4-b468fc657fa9",
+    "full_name": "Harshita Upadhyay",
+    "aadhaar": "4525 5689 4563",
+    "mobile": "8937988072",
+    "address": "Koyla Alipur Post Baad",
+    "pincode": "281006",
+    "description": "I have a problem of water leakage in my area. A pipe has been leaking for many days, and a lot of water is being wasted. The continuous flow of water is also making the road slippery and unsafe for people. I am reporting this issue so that it can be fixed quickly and water can be saved",
+    "category": "Water Leakage",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "High",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\291cd0ee-4f6b-4e67-bcc4-b468fc657fa9_0.jpg"
+    ],
+    "status": "Resolved"
+  },
+  {
+    "ticket_id": "4381d53a-35b3-466c-ae1f-eef2313747dc",
+    "full_name": "Harshita Upadhyay",
+    "aadhaar": "4525 5689 4563",
+    "mobile": "8937988072",
+    "address": "Koyla Alipur Post Baad",
+    "pincode": "281006",
+    "description": "I have a problem of water leakage in my area. A pipe has been leaking for many days, and a lot of water is being wasted. The continuous flow of water is also making the road slippery and unsafe for people. I am reporting this issue so that it can be fixed quickly and water can be saved",
+    "category": "Water Leakage",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "High",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\4381d53a-35b3-466c-ae1f-eef2313747dc_0.jpg"
+    ]
+  },
+  {
+    "ticket_id": "35a29205-3a74-4aa1-8de2-f755d21210df",
+    "full_name": "Riya Upadhyay",
+    "aadhaar": "4587 2525 6363",
+    "mobile": "8937988071",
+    "address": "1100, shiv nagar, roorkee",
+    "pincode": "281006",
+    "description": "I have a problem of water leakage in my area. A pipe has been leaking for many days, and a lot of water is being wasted. The continuous flow of water is also making the road slippery and unsafe for people. I am reporting this issue so that it can be fixed quickly and water can be saved",
+    "category": "Water Leakage",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "High",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\35a29205-3a74-4aa1-8de2-f755d21210df_0.jpg"
+    ]
+  },
+  {
+    "ticket_id": "9e8c0cc8-d046-47a7-9d75-5103fc288f89",
+    "full_name": "Harshita Upadhyay",
+    "aadhaar": "8888 2222 4444",
+    "mobile": "8937988072",
+    "address": "Koyla Alipur Post Baad",
+    "pincode": "281006",
+    "description": "I have a problem of water leakage in my area. A pipe has been leaking for many days, and a lot of water is being wasted. The continuous flow of water is also making the road slippery and unsafe for people. I am reporting this issue so that it can be fixed quickly and water can be saved",
+    "category": "Water Leakage",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "Medium",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\9e8c0cc8-d046-47a7-9d75-5103fc288f89_0.jpg"
+    ],
+    "status": "Resolved"
+  },
+  {
+    "ticket_id": "703362fc-b50a-470b-a354-4b7eb4b062d8",
+    "full_name": "Harshita Upadhyay",
+    "aadhaar": "8888 2222 4444",
+    "mobile": "8937988072",
+    "address": "Koyla Alipur Post Baad",
+    "pincode": "281006",
+    "description": "I have a problem of water leakage in my area. A pipe has been leaking for many days, and a lot of water is being wasted. The continuous flow of water is also making the road slippery and unsafe for people. I am reporting this issue so that it can be fixed quickly and water can be saved",
+    "category": "Water Leakage",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "Medium",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\703362fc-b50a-470b-a354-4b7eb4b062d8_0.jpg"
+    ]
+  },
+  {
+    "ticket_id": "4b07efd8-a42b-4951-b156-518f2e9ac59d",
+    "full_name": "Sanjay Kumar Upadhyay",
+    "aadhaar": "2345 6789 1234",
+    "mobile": "8937988072",
+    "address": "Koyla Alipur Post Baad",
+    "pincode": "281006",
+    "description": "I have a problem of water leakage in my area. A pipe has been leaking for many days, and a lot of water is being wasted. The continuous flow of water is also making the road slippery and unsafe for people. I am reporting this issue so that it can be fixed quickly and water can be saved",
+    "category": "Garbage/Waste Management",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "Medium",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\4b07efd8-a42b-4951-b156-518f2e9ac59d_0.jpg"
+    ],
+    "status": "In Progress"
+  },
+  {
+    "ticket_id": "7639d4c3-230f-4971-b19f-7797cecedab9",
+    "full_name": "Hita Sharma",
+    "aadhaar": "1456 3258 7456",
+    "mobile": "9863754621",
+    "address": "H-110, House, UP",
+    "pincode": "281006",
+    "description": "I have a problem of water leakage in my area. A pipe has been leaking for many days, and a lot of water is being wasted. The continuous flow of water is also making the road slippery and unsafe for people. I am reporting this issue so that it can be fixed quickly and water can be saved.",
+    "category": "Water Leakage",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "High",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\7639d4c3-230f-4971-b19f-7797cecedab9_0.jpg"
+    ]
+  },
+  {
+    "ticket_id": "0b8e6d0c-844b-4ce5-812d-8731120af989",
+    "full_name": "Harshita Upadhyay",
+    "aadhaar": "4525 9258 6538",
+    "mobile": "8937988072",
+    "address": "Koyla Alipur Post Baad",
+    "pincode": "281006",
+    "description": "I have a problem of water leakage in my area. A pipe has been leaking for many days, and a lot of water is being wasted. The continuous flow of water is also making the road slippery and unsafe for people. I am reporting this issue so that it can be fixed quickly and water can be saved.",
+    "category": "Water Leakage",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "High",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\0b8e6d0c-844b-4ce5-812d-8731120af989_0.jpg"
+    ],
+    "status": "Resolved"
+  },
+  {
+    "ticket_id": "03aee359-706c-4e1a-b3b0-6549c4e54930",
+    "full_name": "Harshita Upadhyay",
+    "aadhaar": "4525 9258 6538",
+    "mobile": "8937988072",
+    "address": "Koyla Alipur Post Baad",
+    "pincode": "281006",
+    "description": "I have a problem of water leakage in my area. A pipe has been leaking for many days, and a lot of water is being wasted. The continuous flow of water is also making the road slippery and unsafe for people. I am reporting this issue so that it can be fixed quickly and water can be saved.",
+    "category": "Water Leakage",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "High",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\03aee359-706c-4e1a-b3b0-6549c4e54930_0.jpg"
+    ]
+  },
+  {
+    "ticket_id": "809f67bc-438e-431f-bd48-3dd2dd338d2d",
+    "full_name": "Harshita Upadhyay",
+    "aadhaar": "4525 9258 6538",
+    "mobile": "8937988072",
+    "address": "Koyla Alipur Post Baad",
+    "pincode": "281006",
+    "description": "I have a problem of water leakage in my area. A pipe has been leaking for many days, and a lot of water is being wasted. The continuous flow of water is also making the road slippery and unsafe for people. I am reporting this issue so that it can be fixed quickly and water can be saved.",
+    "category": "Water Leakage",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "High",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\809f67bc-438e-431f-bd48-3dd2dd338d2d_0.jpg"
+    ]
+  },
+  {
+    "ticket_id": "c36a95fc-27e6-4c7f-9a92-ef534aaffe5a",
+    "full_name": "Sanjay Kumar Upadhyay",
+    "aadhaar": "4525 9258 6538",
+    "mobile": "8937988072",
+    "address": "Koyla Alipur Post Baad",
+    "pincode": "281006",
+    "description": "Garbage is all over the streets around my house.........",
+    "category": "Garbage/Waste Management",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "High",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\c36a95fc-27e6-4c7f-9a92-ef534aaffe5a_0.jpg"
+    ],
+    "status": "Resolved"
+  },
+  {
+    "ticket_id": "93b9f552-b74b-4185-b09e-4a53fb40bfd4",
+    "full_name": "Sanjay Kumar Upadhyay",
+    "aadhaar": "4525 9258 6538",
+    "mobile": "8937988072",
+    "address": "Koyla Alipur Post Baad",
+    "pincode": "281006",
+    "description": "Garbage is all over the streets around my house.........",
+    "category": "Garbage/Waste Management",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "High",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\93b9f552-b74b-4185-b09e-4a53fb40bfd4_0.jpg"
+    ]
+  },
+  {
+    "ticket_id": "7ac142ca-847c-4e53-bfdb-222a025e16c3",
+    "full_name": "Saumya Chauhan",
+    "aadhaar": "2345 6789 1234",
+    "mobile": "5689568952",
+    "address": "Koyla Alipur Post Baad",
+    "pincode": "281006",
+    "description": "Street light broken.........",
+    "category": "Street Lights",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "High",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\7ac142ca-847c-4e53-bfdb-222a025e16c3_0.jpg"
+    ],
+    "status": "In Progress"
+  },
+  {
+    "ticket_id": "95ea0236-cea2-424f-b88f-a6000a8ae891",
+    "full_name": "Hita Sharma",
+    "aadhaar": "1234 2345 5678",
+    "mobile": "8965237826",
+    "address": "Koyla Alipur Post Baad",
+    "pincode": "281006",
+    "description": "Garabge...",
+    "category": "Garbage/Waste Management",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "High",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\95ea0236-cea2-424f-b88f-a6000a8ae891_0.jpg"
+    ]
+  },
+  {
+    "ticket_id": "d0e086f2-983d-4803-b2c8-3efe8f939c8b",
+    "full_name": "Hita Sharma",
+    "aadhaar": "1234 2345 5678",
+    "mobile": "8965237826",
+    "address": "Koyla Alipur Post Baad",
+    "pincode": "281006",
+    "description": "Garabge...",
+    "category": "Garbage/Waste Management",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "High",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\d0e086f2-983d-4803-b2c8-3efe8f939c8b_0.jpg"
+    ],
+    "status": "In Progress"
+  },
+  {
+    "ticket_id": "9b7996f0-b089-4bc2-97e9-7d87cfbc1242",
+    "full_name": "Hita Sharma",
+    "aadhaar": "1234 2345 5678",
+    "mobile": "8965237826",
+    "address": "Koyla Alipur Post Baad",
+    "pincode": "281006",
+    "description": "Garabge...",
+    "category": "Garbage/Waste Management",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "High",
+    "date": "18-09-2025",
+    "images": [
+      "static\\uploads\\9b7996f0-b089-4bc2-97e9-7d87cfbc1242_0.jpg"
+    ]
+  },
+  {
+    "ticket_id": "e4b01533-c2bd-4b48-adaa-de37d1697220",
+    "full_name": "Harshita Upadhyay",
+    "aadhaar": "4525 9258 6538",
+    "mobile": "8937988072",
+    "address": "Koyla Alipur Post Baad, Mathura, UP",
+    "pincode": "281006",
+    "description": "very huge garbage",
+    "category": "Garbage/Waste Management",
+    "location": "Banasthali Vidyapeeth, \u092c\u0928\u0938\u094d\u0925\u0932\u0940, Niwai Tehsil, Tonk, Rajasthan, 304022, India",
+    "urgency": "Medium",
+    "date": "17-02-2026",
+    "images": [
+      "static\\uploads\\e4b01533-c2bd-4b48-adaa-de37d1697220_0.png"
+    ],
+    "status": "In Progress"
+  }
+]
